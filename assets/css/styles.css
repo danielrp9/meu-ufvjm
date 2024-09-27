@@ -1,0 +1,108 @@
+/* style.css */
+
+/* Global */
+body {
+    font-family: 'Raleway', sans-serif; /* Aplicando a fonte Raleway */
+    background-color: #f8f9fa;
+    color: #333;
+    transition: opacity 0.5s ease-in-out; /* Transição suave */
+}
+
+h5.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #2969BD !important; /* Azul padrão */
+}
+
+.navbar .navbar-brand, .navbar .nav-link {
+    color: #fff !important; /* Letras brancas */
+}
+
+.navbar .nav-link:hover, .navbar .nav-link:focus {
+    color: #f8f9fa; /* Branco mais claro no hover e foco */
+}
+
+/* Main section */
+main {
+    margin-top: 20px;
+}
+
+/* Card Styles */
+.card {
+    background-color: #ffffff; /* Cor de fundo do card */
+    border: 1px solid #767575; /* Borda clara */
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px; /* Adicionando margem inferior para espaçamento entre os cards */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra padrão */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
+}
+
+.card-body i {
+    color: #007bff;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilo da seção principal de contatos */
+h2 {
+    color: #007bff; /* Cor do título */
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item:hover {
+    background-color: #e9ecef; /* Cor de fundo no hover */
+}
+
+/* Estilo dos ícones */
+i {
+    margin-right: 5px; /* Espaçamento entre ícone e texto */
+}
+
+/* Estilo dos cards de serviço */
+.service-card {
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center; /* Centraliza o texto e o ícone */
+}
+
+/* Container de ícones */
+.icon-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100px; /* Altura fixa para centralização vertical */
+}
+
+/* Navbar personalizada */
+.navbar-custom {
+    background-color: #007bff; /* Azul */
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: white; /* Texto branco */
+}
+
+/* Adicionando margens nos containers de cards em tela grande */
+@media (min-width: 768px) {
+    .card {
+        margin-right: 15px; /* Margem direita para espaçamento */
+    }
+}
