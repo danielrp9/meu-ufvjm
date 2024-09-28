@@ -1,0 +1,79 @@
+ /* Estilos personalizados para os cartões de contato */
+ .contact-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    position: relative;
+    overflow: visible;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo da bolinha com o ícone de contato centralizada */
+.contact-icon {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icon i {
+    font-size: 1.5rem;
+}
+
+/* Efeito nos ícones dentro dos cards */
+.icon-container a {
+    transition: color 0.3s ease;
+}
+
+.icon-container a:hover {
+    color: #007bff;
+}
+
+.contact-card .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.contact-card .btn {
+    border-radius: 50px;
+}
+
+/* Personalização do ícone do WhatsApp */
+.btn-outline-success i {
+    color: #25d366;
+}
+
+.btn-outline-success:hover i {
+    color: #fff;
+}
+
+/* Personalização do ícone de telefone */
+.btn-outline-primary i {
+    color: #007bff;
+}
+
+.btn-outline-primary:hover i {
+    color: #fff;
+}
+
+/* Personalização do ícone de localização */
+.btn-outline-info i {
+    color: #17a2b8;
+}
+
+.btn-outline-info:hover i {
+    color: #fff;
+}
