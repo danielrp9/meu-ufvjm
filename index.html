@@ -1,195 +1,227 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Moradia Estudantil UFVJM</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Font Awesome para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+ <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Moradia Estudantil UFVJM</title>
+        
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!-- Font Awesome para ícones -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <style>
-        /* Estilo global para o corpo */
-        body {
-            font-family: 'Montserrat', sans-serif; /* Define a fonte Montserrat para todo o corpo */
-        }
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <style>
+            body {
+                font-family: 'Montserrat', sans-serif;
+            }
 
-        /* Adicionando estilos personalizados para o título */
-        .navbar-text {
-            display: none; /* Oculta o texto por padrão */
-        }
-
-        @media (max-width: 991.98px) {
             .navbar-text {
-                display: block; /* Exibe o texto em telas menores */
+                display: none;
+            }
+
+            @media (max-width: 991.98px) {
+                .navbar-text {
+                    display: block;
+                    text-align: center;
+                    font-size: 1rem;
+                    margin: 0 auto;
+                }
+
+                .navbar-collapse {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+
+            /* Estilo personalizado para o modal de boas-vindas */
+            #welcomeModal .modal-content {
+                background-color: #f8f9fa;
                 text-align: center;
-                font-size: 1rem; /* Tamanho do texto reduzido */
-                margin: 0 auto; /* Centraliza o texto */
+                padding: 40px;
             }
 
-            .navbar-collapse {
-                flex-direction: column; /* Muda a direção do menu para coluna */
-                align-items: center; /* Centraliza os itens */
+            #welcomeModal .btn-primary {
+                background-color: #0d6efd;
+                border-color: #0d6efd;
             }
+        </style>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/img/image.png" alt="Logo" height="30">
+                </a>
+                
+                <span class="navbar-text d-lg-none mx-auto text-white fw-bold">Moradia Estudantil - UFVJM</span>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="https://portal.ufvjm.edu.br/a-universidade/cursos/">Nossos cursos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://portal.ufvjm.edu.br/editais">Editais e Concursos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Serviços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="assets/html/sobre.html">Sobre</a>
+                        </li>
+                    </ul>
+
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" id="searchInput" type="search" placeholder="Buscar..." aria-label="Search" onkeyup="searchFunction()">
+                        <button class="btn btn-outline-light" type="button">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Seção principal com quadros interativos -->
+        <main class="container py-5">
+            <div class="row text-center g-4" id="content">
+                <!-- Contato de Serviços -->
+                <div class="col-6 col-md-4">
+                    <div class="card shadow-sm border-0 rounded-3">
+                        <div class="card-body">
+                            <i class="fas fa-phone fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title">Contato de Serviços</h5>
+                            <a href="assets/html/contatos.html" class="btn btn-outline-primary">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Atendimento Psicológico -->
+                <div class="col-6 col-md-4">
+                    <div class="card shadow-sm border-0 rounded-3">
+                        <div class="card-body">
+                            <i class="fas fa-user-md fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title">Psicólogos UFVJM</h5>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdJ2-66C4_kuYre8-Rl3kkJhWI7_pXiaDNTCqkp_sE0cH7kcA/viewform" class="btn btn-outline-primary">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horário de Ônibus -->
+                <div class="col-6 col-md-4">
+                    <div class="card shadow-sm border-0 rounded-3">
+                        <div class="card-body">
+                            <i class="fas fa-bus fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title">Horário de Ônibus</h5>
+                            <a href="https://portal.ufvjm.edu.br/proace/estudante/bolsas-e-auxilios/programa-de-sistema-integrado-de-transporte-interespacos/horarios-de-onibus#:~:text=Hor%C3%A1rios%20de%20%C3%B4nibus%20%E2%80%94%20Assist%C3%AAncia%20ao" class="btn btn-outline-primary">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+<!-- Manual de Conexão à Internet -->
+<div class="col-6 col-md-4">
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-body">
+            <i class="fas fa-wifi fa-3x text-primary mb-3"></i>
+            <h5 class="card-title">Manual de Conexão</h5>
+            <a href="assets/manual_internet.pdf" class="btn btn-outline-primary">Ver manual</a>
+        </div>
+    </div>
+</div>
+
+
+
+                <!-- Calendários -->
+                <div class="col-6 col-md-4">
+                    <div class="card shadow-sm border-0 rounded-3">
+                        <div class="card-body">
+                            <i class="fas fa-calendar-alt fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title">Calendários</h5>
+                            <a href="https://portal.ufvjm.edu.br/estudantes/calendarios-academicos" class="btn btn-outline-primary">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                            <!-- Regimento MEU -->
+                            <div class="col-6 col-md-4">
+                                <div class="card shadow-sm border-0 rounded-3">
+                                    <div class="card-body">
+                                        <i class="fas fa-book fa-3x text-primary mb-3"></i>
+                                        <h5 class="card-title">Regimento MEU</h5>
+                                        <a href="http://www.ufvjm.edu.br/proace/pae/doc_view/729--regimento-interno-da-moradia-estudantil.html#:~:text=Moradia%20Estudantil%20Universit%C3%A1ria%20(MEU)%20%C3%A9" class="btn btn-outline-primary">Ver mais</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                                        <!-- Bolsa Auxílios -->
+                <div class="col-6 col-md-4">
+                    <div class="card shadow-sm border-0 rounded-3">
+                        <div class="card-body">
+                            <i class="fas fa-hand-holding-usd fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title">Bolsa Auxílios</h5>
+                            <a href="https://portal.ufvjm.edu.br/proace/estudante/bolsas-e-auxilios" class="btn btn-outline-primary">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </main>
+
+        <!-- Rodapé -->
+        <footer class="bg-light text-center py-4">
+            <p>&copy; 2024 Moradia Estudantil UFVJM. Todos os direitos reservados.</p>
+        </footer>
+
+        <!-- Modal de boas-vindas -->
+        <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="welcomeModalLabel">Bem-vindo ao Mural da Moradia Estudantil - UFVJM</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p>Bem-vindo à página desenvolvida para unificar serviços essenciais para os moradores da Moradia Estudantil. Explore a aplicação e serviços e fique à vontade para entrar em contato.</p>
+                        <button type="button" class="btn btn-primary" id="continueButton">Continuar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+ <script>
+    window.addEventListener('load', function () {
+        // Verifique se a chave 'modalShown' já está no localStorage
+        if (!localStorage.getItem('modalShown')) {
+            const welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+            welcomeModal.show();
+
+            // Fechar o modal automaticamente após 5 segundos
+            setTimeout(function () {
+                welcomeModal.hide();
+            }, 7000);
+
+            // Fechar o modal ao clicar no botão "Continuar"
+            document.getElementById('continueButton').addEventListener('click', function () {
+                welcomeModal.hide();
+            });
+
+            // Armazene uma chave no localStorage para não mostrar o modal novamente
+            localStorage.setItem('modalShown', 'true');
         }
-    </style>
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="assets/img/image.png" alt="Logo" height="30">
-            </a>
-            
-            <!-- Texto destacado "Moradia Estudantil - UFVJM" visível em telas menores -->
-            <span class="navbar-text d-lg-none mx-auto text-white fw-bold">Moradia Estudantil - UFVJM</span>
+    });
+</script>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="https://portal.ufvjm.edu.br/a-universidade/cursos/">Nossos cursos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://portal.ufvjm.edu.br/editais">Editais e Concursos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Serviços</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="assets/html/sobre.html">Sobre</a>
-                    </li>
-                </ul>
-
-                <!-- Barra de pesquisa interna -->
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" id="searchInput" type="search" placeholder="Buscar..." aria-label="Search" onkeyup="searchFunction()">
-                    <button class="btn btn-outline-light" type="button">Buscar</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
-
-
-    <!-- Seção principal com quadros interativos -->
-    <main class="container py-5">
-        <div class="row text-center g-4" id="content">
-            <!-- Contato de Serviços -->
-            <div class="col-6 col-md-4">
-                <div class="card shadow-sm border-0 rounded-3">
-                    <div class="card-body">
-                        <i class="fas fa-phone fa-3x text-primary mb-3"></i>
-                        <h5 class="card-title">Contato de Serviços</h5>
-                        <a href="assets/html/contatos.html" class="btn btn-outline-primary">Ver mais</a>
-                    </div>
-                </div>
-            </div>
-                       <!-- Atendimento Psicológico -->
-<div class="col-6 col-md-4">
-    <div class="card shadow-sm border-0 rounded-3">
-        <div class="card-body">
-            <i class="fas fa-user-md fa-3x text-primary mb-3"></i>
-            <h5 class="card-title">Psicólogos UFVJM</h5>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdJ2-66C4_kuYre8-Rl3kkJhWI7_pXiaDNTCqkp_sE0cH7kcA/viewform" class="btn btn-outline-primary">Ver mais</a>
-        </div>
-    </div>
-</div>
-
-            <!-- Atendimento Psicológico -->
-<div class="col-6 col-md-4">
-    <div class="card shadow-sm border-0 rounded-3">
-        <div class="card-body">
-            <i class="fas fa-user-md fa-3x text-primary mb-3"></i>
-            <h5 class="card-title">Psicólogos UFVJM</h5>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdJ2-66C4_kuYre8-Rl3kkJhWI7_pXiaDNTCqkp_sE0cH7kcA/viewform" class="btn btn-outline-primary">Ver mais</a>
-        </div>
-    </div>
-</div>
-
-            <!-- Horário de Ônibus -->
-            <div class="col-6 col-md-4">
-                <div class="card shadow-sm border-0 rounded-3">
-                    <div class="card-body">
-                        <i class="fas fa-bus fa-3x text-primary mb-3"></i>
-                        <h5 class="card-title">Horário de Ônibus</h5>
-
-                        <a href=https://portal.ufvjm.edu.br/proace/estudante/bolsas-e-auxilios/programa-de-sistema-integrado-de-transporte-interespacos/horarios-de-onibus#:~:text=Hor%C3%A1rios%20de%20%C3%B4nibus%20%E2%80%94%20Assist%C3%AAncia%20ao" class="btn btn-outline-primary">Ver mais</a>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Manual de Conexão à Internet -->
-            <div class="col-6 col-md-4">
-                <div class="card shadow-sm border-0 rounded-3">
-                    <div class="card-body">
-                        <i class="fas fa-wifi fa-3x text-primary mb-3"></i>
-                        <h5 class="card-title">Manual de Conexão</h5>
-                        <a href="assets/pdf/Manual do Usuário - Acesso a rede eduroam Dicom.pdf" class="btn btn-outline-primary">Ver manual</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Calendários -->
-            <div class="col-6 col-md-4">
-                <div class="card shadow-sm border-0 rounded-3">
-                    <div class="card-body">
-                        <i class="fas fa-calendar-alt fa-3x text-primary mb-3"></i>
-                        <h5 class="card-title">Calendários</h5>
-                        <a href="https://portal.ufvjm.edu.br/estudantes/calendarios-academicos" class="btn btn-outline-primary">Ver mais</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Regimento MEU -->
-            <div class="col-6 col-md-4">
-                <div class="card shadow-sm border-0 rounded-3">
-                    <div class="card-body">
-                        <i class="fas fa-book fa-3x text-primary mb-3"></i>
-                        <h5 class="card-title">Regimento MEU</h5>
-                        <a href="http://www.ufvjm.edu.br/proace/pae/doc_view/729--regimento-interno-da-moradia-estudantil.html#:~:text=Moradia%20Estudantil%20Universit%C3%A1ria%20(MEU)%20%C3%A9" class="btn btn-outline-primary">Ver mais</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Bolsa Auxílios -->
-            <div class="col-6 col-md-4">
-                <div class="card shadow-sm border-0 rounded-3">
-                    <div class="card-body">
-                        <i class="fas fa-hand-holding-usd fa-3x text-primary mb-3"></i>
-                        <h5 class="card-title">Bolsa Auxílios</h5>
-                        <a href="https://portal.ufvjm.edu.br/proace/estudante/bolsas-e-auxilios" class="btn btn-outline-primary">Ver mais</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="bg-light text-center py-4">
-        <p>&copy; 2024 Moradia Estudantil UFVJM. Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-      <!-- Script de busca interna -->
-    <script src="assets/js/busca-interna.js"></script>
-  
-</body>
-</html>
+    </body>
+    </html>
